@@ -1,6 +1,8 @@
 
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Link, Route } from 'react-router-dom';
+import AnwendungHeader from "./komponenten/anwendungHeader";
+import AnwendungFooter from "./komponenten/anwendungFooter";
 
 //Allgemeine
 import DatenschutzAnsicht from "./ansichten/allgemeine/datenschutzAnsicht";
@@ -63,6 +65,7 @@ import './App.css';
 function App() {
   return (
     <Router>
+        <AnwendungHeader/>
         <Routes>
           <Route path="/datenschutz" element={<DatenschutzAnsicht/>} />
           <Route path="/einloggen" element={<EinloggenAnsicht/>} />
@@ -112,6 +115,7 @@ function App() {
           <Route path="/benutzer/neu" element={<VerwaltungBenutzerNeuAnsicht/>} />
           <Route path="/benutzer/verwalten" element={<VerwaltungBenutzerVerwaltenAnsicht/>} />
         </Routes>
+        <AnwendungFooter/>
     </Router>
   );
 }
